@@ -1,0 +1,7 @@
+#projects
+:javascript
+  $(function() {
+  // Blog is the app name
+  window.router = new Todo.Routers.ProjectsRouter({projects: #{@projects.to_json.html_safe}});
+  Backbone.history.start();
+  })
