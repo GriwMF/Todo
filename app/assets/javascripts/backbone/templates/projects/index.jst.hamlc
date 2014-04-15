@@ -1,9 +1,7 @@
-%h1 Listing projects
-%table#projects-table
-  %tr
-    %th Title
-    %th
-    %th
-    %th
+.page-header
+  %h1.text-center 
+    Listing projects
+#projects-table
+
 %br/
 %a{:href => "#/new"} New Project

@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require hamlcoffee
 //= require underscore
 //= require backbone
+//= require backbone-relational
 //= require backbone_rails_sync
 //= require backbone_datalink
-//= require backbone-relational
 //= require backbone/todo
 //= require_tree .

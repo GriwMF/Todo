@@ -1,0 +1,12 @@
+%td.width5
+  %input.completed-checkbox{type: "checkbox", autocomplete:"off", checked: @completed} 
+%td= @title
+%td#task-edit.width10
+  %a{:href => "#"}
+    %span.glyphicon.glyphicon-arrow-up
+  %a{:href => "#"}
+    %span.glyphicon.glyphicon-arrow-down
+  %a{:href => "#"}
+    %span.glyphicon.glyphicon-pencil
+  %a{:href => "#"}
+    %span.glyphicon.glyphicon-trash

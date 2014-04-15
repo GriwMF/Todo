@@ -1,0 +1,194 @@
+@import "bootstrap";
+
+div.navbar {
+  border-radius: 0px !important;
+}
+
+body {
+  margin: 0px 10% 0px 10% !important;
+  padding-bottom: 70px !important;
+}
+
+#created_for {
+  text-align: center !important;
+  float: none !important;
+}
+
+#created_for > a {
+  color: #3A00DB;
+}
+
+#created_for > a:hover {
+  background-color: #2fa4e7;
+}
+
+.space {
+  margin-top: 3em;
+}
+
+.space1 {
+  margin-top: 1em;
+}
+
+.green {
+  color: green;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
+}
+
+.panel {
+  border-radius: 0px !important;
+}
+
+.btn {
+  border-radius: 0px !important;
+}
+
+.input-group-addon {
+  border-radius: 0px !important;
+}
+
+.form-control {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+.navbar {
+  background-color: #AFE1FA !important;
+  border-color: #AFE1FA !important;
+  a {
+    color: white !important;
+  }
+  a:hover {
+    color: black !important;
+  }
+}
+
+.clearBoth {
+  clear:both;
+}
+
+.label {
+  border-radius: 0px !important;
+}
+
+.max-height {
+  height: 100%;
+}
+
+.padding-margin-nil {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.light-blue-background {
+  background-color: #AFE1FA;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.page-header {
+  color: #3DABB3 !important;
+}
+
+.form_wrap {
+  width: 22em;
+}
+
+#submit-btn {
+ display: inline !important;
+}
+
+.center {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#projects-wrap {
+  width: 50em;
+}
+
+.width5 {
+  width: 5%;
+}
+
+.width15 {
+  width: 15%;
+}
+
+.width10 {
+  width: 13%;
+}
+
+.float-right {
+  float: right;
+}
+
+.border-nil {
+  border-bottom: 0 !important;
+}
+
+#table-tasks{
+  border-collapse: collapse;
+}
+#table-tasks td {
+  border: 1px solid #3595C4;
+  vertical-align:middle;
+}
+#table-tasks tr:first-child td{
+  border-top: 0 !important;
+}
+#table-tasks tr:last-child td{
+  border-bottom: 0 !important;
+}
+#table-tasks tr td:first-child {
+  border-left: 0 !important;
+  border-right: 3px double #3595C4 !important;
+}
+#table-tasks tr td:last-child {
+  border-right: 0 !important;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.vertical-space {
+  content: "";
+  clear: both;
+  min-height: 1em;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: #9ACBE3 !important;
+}
+
+.table-hover > tbody > tr > #task-edit {
+  visibility: hidden;
+}
+
+.table-hover > tbody > tr:hover > #task-edit {
+  visibility: visible;
+}
+

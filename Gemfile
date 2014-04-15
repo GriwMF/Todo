@@ -21,6 +21,7 @@ gem 'haml-rails', :group => :development
 gem "erb2haml", :group => :development
 
 gem 'rails-backbone'
+gem 'backbone-relational-rails'
 
 gem 'bootstrap-sass'
 gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"

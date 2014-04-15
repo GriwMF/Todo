@@ -1,0 +1,18 @@
+.panel.panel-info
+  .panel-heading.panel-title
+    = @title
+    .float-right
+      %a{:href => "#"}
+        %span.glyphicon.glyphicon-pencil
+      %a{:href => "#"}
+        %span.glyphicon.glyphicon-trash
+
+  .panel-body.light-blue-background.padding-margin-nil
+    .input-group
+      .input-group-addon
+        %span.glyphicon.glyphicon-plus.green
+      %input{type: "text", name: "project_title", placeholder: 'Please enter your task here', :class => "form-control"}
+      .input-group-btn.light-blue-background
+        %input{type: "submit", value: 'Add Task', :class => "btn btn-info"}
+    %table#table-tasks.table.table-hover.padding-margin-nil
+      %tbody

@@ -1,7 +1,8 @@
-#projects
+#projects-wrap.center
+== projects: #{@projects.to_json({:include => :tasks}).html_safe}
 :javascript
   $(function() {
   // Blog is the app name
-  window.router = new Todo.Routers.ProjectsRouter({projects: #{@projects.to_json.html_safe}});
+  window.router = new Todo.Routers.ProjectsRouter({projects: #{@projects.to_json({:include => :tasks}).html_safe}});
   Backbone.history.start();
   })
