@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# See https://github.com/sstephenson/execjs readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
@@ -20,12 +20,11 @@ gem 'haml-rails', :group => :development
 
 gem "erb2haml", :group => :development
 
-gem 'rails-backbone'
+gem 'rails-backbone', git: "https://github.com/codebrew/backbone-rails.git"
 gem 'backbone-relational-rails'
 
 gem 'bootstrap-sass'
 gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
-
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'

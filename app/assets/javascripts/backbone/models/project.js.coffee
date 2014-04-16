@@ -4,6 +4,15 @@ class Todo.Models.Project extends Backbone.RelationalModel
   defaults:
     title: null
 
+  initialize: ->
+    @on("invalid", (model,error) ->
+      alert(error);
+    )
+
+  validate: (attrs,options) ->
+    if (attrs.title == '')
+      return "Project name can't be blank";
+
   relations: [
     type: Backbone.HasMany
     key: 'tasks'
@@ -11,8 +20,8 @@ class Todo.Models.Project extends Backbone.RelationalModel
     collectionType: 'Todo.Collections.TasksCollection'
     includeInJSON: false
     reverseRelation:
-      key: 'project_id',
-      includeInJSON: 'id'
+      key: 'project'
+      includeInJSON: false
   ]
 
 Todo.Models.Project.setup()

@@ -1,6 +1,7 @@
 class Todo.Routers.ProjectsRouter extends Backbone.Router
   initialize: (options) ->
-    @projects = new Todo.Collections.ProjectsCollection(options.projects)
+    @projects = new Todo.Collections.ProjectsCollection()
+    @projects.reset options.projects
 
   routes:
     "new"      : "newProject"
@@ -14,7 +15,7 @@ class Todo.Routers.ProjectsRouter extends Backbone.Router
     $("#projects-wrap").html(@view.render().el)
 
   index: ->
-    @view = new Todo.Views.Projects.IndexView(projects: @projects)
+    @view = new Todo.Views.Projects.IndexView(collection: @projects)
     $("#projects-wrap").html(@view.render().el)
 
   show: (id) ->

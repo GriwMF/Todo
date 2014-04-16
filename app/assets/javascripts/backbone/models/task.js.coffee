@@ -3,8 +3,19 @@ class Todo.Models.Task extends Backbone.RelationalModel
 
   defaults:
     title: null
+
+  initialize: ->
+    @on("invalid", (model,error) ->
+      alert(error);
+    )
+
+  validate: (attrs,options) ->
+    if (attrs.title == '')
+      return "Task name can't be blank";
     
-Todo.Models.Task.setup() 
+Todo.Models.Task.setup()
 
 class Todo.Collections.TasksCollection extends Backbone.Collection
-  url: '/tasks'
+  model: Todo.Models.Task
+  url: ->
+    return '/projects/' + @project.id + '/tasks'
