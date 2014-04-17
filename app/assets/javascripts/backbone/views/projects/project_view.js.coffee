@@ -42,12 +42,14 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
       title: @$("#new_task_title").val()
       completed: false
     )
-
-    new_task.save(null,
-      success: =>
-        @addTask(new_task)
-        @$("#new_task_title").val('')
-    )
+    if new_task.isValid()
+      new_task.save(null,
+        success: =>
+          @addTask(new_task)
+          @$("#new_task_title").val('')
+      )
+    else
+      new_task.destroy()
     
 
   addAllTasks: =>

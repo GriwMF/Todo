@@ -4,12 +4,7 @@ class Todo.Models.Project extends Backbone.RelationalModel
   defaults:
     title: null
 
-  initialize: ->
-    @on("invalid", (model,error) ->
-      alert(error);
-    )
-
-  validate: (attrs,options) ->
+  validate: (attrs) ->
     if (attrs.title == '')
       return "Project name can't be blank";
 

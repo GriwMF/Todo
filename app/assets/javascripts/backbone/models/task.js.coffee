@@ -4,12 +4,7 @@ class Todo.Models.Task extends Backbone.RelationalModel
   defaults:
     title: null
 
-  initialize: ->
-    @on("invalid", (model,error) ->
-      alert(error);
-    )
-
-  validate: (attrs,options) ->
+  validate: (attrs) ->
     if (attrs.title == '')
       return "Task name can't be blank";
     
