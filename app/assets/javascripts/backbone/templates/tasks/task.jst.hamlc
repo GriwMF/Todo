@@ -6,11 +6,11 @@
   .edit.margin-panel
     %input{type: "text", id: "task_title", class: 'form-control'} 
 %td#task-edit.width10
-  %a{:href => "#"}
+  %a.up{:href => "#"}
     %span.glyphicon.glyphicon-arrow-up
-  %a{:href => "#"}
+  %a.down{:href => "#"}
     %span.glyphicon.glyphicon-arrow-down
-  %a{:href => "#"}
+  %a.update{:href => "#"}
     %span.glyphicon.glyphicon-pencil
   %a.destroy{:href => "#"}
     %span.glyphicon.glyphicon-trash

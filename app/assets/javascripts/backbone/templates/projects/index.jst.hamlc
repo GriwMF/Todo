@@ -4,4 +4,9 @@
 #projects-table
 
 %br/
-%a{:href => "#/new"} New Project
+%form#frmNewProj
+  .form-elem
+    .input-group
+      %input{type: "text", id: "new_proj_title", placeholder: 'Please enter project title', :class => "form-control"}
+      .input-group-btn
+        %input{type: "submit", value: 'New project', :class => "btn btn-success"}

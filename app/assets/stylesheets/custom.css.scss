@@ -6,7 +6,6 @@ div.navbar {
 
 body {
   margin: 0px 10% 0px 10% !important;
-  padding-bottom: 70px !important;
 }
 
 #created_for {
@@ -34,6 +33,10 @@ body {
   color: green;
 }
 
+.home-title {
+  color: #3DABB3;
+}
+
 .max-width {
   width: 100%;
 }
@@ -54,20 +57,14 @@ body {
   border-radius: 0px !important;
 }
 
+.form-elem {
+  width: 350px;
+  margin: 0 auto; 
+}
+
 .form-control {
   border-radius: 0px !important;
   box-shadow: none !important;
-}
-
-.navbar {
-  background-color: #AFE1FA !important;
-  border-color: #AFE1FA !important;
-  a {
-    color: white !important;
-  }
-  a:hover {
-    color: black !important;
-  }
 }
 
 .clearBoth {

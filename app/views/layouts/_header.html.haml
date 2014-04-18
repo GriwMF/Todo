@@ -1,16 +1,15 @@
-.bs-component
-  .navbar.navbar-inverse
-    .navbar-header
-      %a{href: "<haml_loud"} root_path class="navbar-brand">Task Manager
-    .navbar-collapse.collapse.navbar-inverse-collapse
-      %ul.nav.navbar-nav.navbar-right
-        - if user_signed_in?
-          %li
-            %a{href: "<haml_loud"}
-              edit_user_registration_path> #{current_user.email}
-          %li= link_to 'Sign out', destroy_user_session_path, :method => 'delete'
+.navbar.navbar-default
+  .navbar-header
+    .navbar-brand
+      .home-title
+        Task Manager
+  .navbar-collapse.collapse.navbar-inverse-collapse
+    %ul.nav.navbar-nav.navbar-right
+      - if user_signed_in?
+        %li= link_to current_user.email, edit_user_registration_path
+        %li= link_to 'Sign out', destroy_user_session_path, :method => 'delete'
+      - else
+        - if current_page? new_user_registration_path
+          %li= link_to 'Sign in', new_user_session_path
         - else
-          - if current_page? new_user_registration_path
-            %li= link_to 'Sign in', new_user_session_path
-          - else
-            %li= link_to 'Sign up', new_user_registration_path
+          %li= link_to 'Sign up', new_user_registration_path

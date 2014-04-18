@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /tasks
   # GET /tasks.json
@@ -55,6 +56,7 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
+    @task.shift_priority
     @task.destroy
     respond_to do |format|
       format.html { redirect_to tasks_url }
@@ -65,16 +67,17 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      @task = Task.find(params[:id])
+      set_project
+      @task = @project.tasks.find(params[:id])
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:project_id])
+      @project = current_user.projects.find(params[:project_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :completed, :project_id)
+      params.require(:task).permit(:title, :completed, :project_id, :priority)
     end
 end

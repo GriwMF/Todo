@@ -4,7 +4,7 @@
       .view
         = @title
         .float-right
-          %a{:href => "#"}
+          %a.update{:href => "#"}
             %span.glyphicon.glyphicon-pencil
           %a.destroy{:href => "#"}
             %span.glyphicon.glyphicon-trash

@@ -26,6 +26,8 @@ gem 'backbone-relational-rails'
 gem 'bootstrap-sass'
 gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
 
+gem 'devise'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
