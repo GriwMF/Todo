@@ -40,6 +40,10 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :production, :staging do
+  gem 'rails_12factor'
+end 
+
 group :test do
   gem 'capybara'
   # gem 'capybara-webkit'
