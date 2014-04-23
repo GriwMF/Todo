@@ -1,26 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
-  # GET /tasks
-  # GET /tasks.json
-  def index
-    @tasks = Task.all
-  end
-
-  # GET /tasks/1
-  # GET /tasks/1.json
-  def show
-  end
-
-  # GET /tasks/new
-  def new
-    @task = Task.new
-  end
-
-  # GET /tasks/1/edit
-  def edit
-  end
+  before_action :set_task, only: [:update, :destroy]
 
   # POST /tasks
   # POST /tasks.json
@@ -30,10 +10,8 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created }
       else
-        format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end

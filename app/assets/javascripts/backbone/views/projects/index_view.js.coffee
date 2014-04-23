@@ -12,7 +12,7 @@ class Todo.Views.Projects.IndexView extends Backbone.View
   create: (e) ->
     e.preventDefault()
     e.stopPropagation()
-    title = @$("#new_proj_title").val()
+    title = @$("#new_proj_title").val().trim()
     if title != ''
       @$("#new_proj_title").val('')
       @collection.create(title: title)

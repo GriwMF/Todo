@@ -10,7 +10,7 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
   events:
     "click .destroy" : "destroy"
     "click .update" : "update"
-    "submit #frmNewTask" : "create"
+    "submit #frmNewTask" : "create_task"
     "dblclick #edit_proiect .view"  : "edit"
     "keypress #edit_proiect .edit"  : "updateOnEnter"
     "blur #edit_proiect .edit"      : "close"
@@ -24,7 +24,7 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
   close: ->
     if @$('#edit_proiect').hasClass("editing")
       @$('#edit_proiect').removeClass("editing"); 
-      @model.save({title: @input.val()});
+      @model.save({title: @input.val().trim()});
     
   updateOnEnter: (e) ->
     if (e.keyCode == 13)
@@ -39,15 +39,15 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
   update: (e) ->
     e.preventDefault()
     e.stopPropagation()
-    @edit()  
+    @edit()
 
-  create: (e) ->
+  create_task: (e) ->
     e.preventDefault()
     e.stopPropagation()
     new_task = new Todo.Models.Task(
       project: @model
       priority: @model.get('tasks').length
-      title: @$("#new_task_title").val()
+      title: @$("#new_task_title").val().trim()
       completed: false
     )
     if new_task.isValid()

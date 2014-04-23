@@ -7,6 +7,7 @@ class Todo.Views.Tasks.TaskView extends Backbone.View
 
   initialize: ->
     @listenTo(@model, 'change', @render);
+    @$el.attr('id', 'task' + @model.get('id'))
 
   events:
     "click .destroy" : "destroy"
@@ -28,7 +29,7 @@ class Todo.Views.Tasks.TaskView extends Backbone.View
   close: (e) ->
     if @$('#edit_task').hasClass("editing")
       @$('#edit_task').removeClass("editing");  
-      @model.save({title: @input.val()});
+      @model.save({title: @input.val().trim()});
 
   updateOnEnter: (e) ->
     if (e.keyCode == 13)
