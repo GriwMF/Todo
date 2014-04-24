@@ -7,7 +7,7 @@ class Todo.Routers.ProjectsRouter extends Backbone.Router
     "new"      : "newProject"
     "index"    : "index"
     ":id/edit" : "edit"
-    ":id"      : "show"
+    "projects/:project_id/tasks/:id/edit" : "edit_task"
     ""        : "index"
 
   newProject: ->
@@ -28,4 +28,10 @@ class Todo.Routers.ProjectsRouter extends Backbone.Router
     project = @projects.get(id)
 
     @view = new Todo.Views.Projects.EditView(model: project)
+    $("#projects-wrap").html(@view.render().el)
+
+  edit_task: (project_id, id) ->
+    project = @projects.get(project_id)
+    task = project.get('tasks').get(id)
+    @view = new Todo.Views.Tasks.EditView(model: task)
     $("#projects-wrap").html(@view.render().el)

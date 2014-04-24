@@ -23,4 +23,5 @@ Todo.Models.Project.setup()
 
 class Todo.Collections.ProjectsCollection extends Backbone.Collection
   model: Todo.Models.Project
+  comparator: 'id'
   url: '/projects'

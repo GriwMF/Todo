@@ -13,7 +13,7 @@ describe TasksController do
   # BooksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  let(:user) { User.create!(email: "123@123.123", password: "123123123")}
+  let(:user) { FactoryGirl.create :user }
   let(:project) { user.projects.create!(title: "123123123")}
 
 

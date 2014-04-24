@@ -1,7 +1,7 @@
 require 'features/features_spec_helper'
 
 feature "Priority management", js: true do
-  let(:user) {User.create!(email: "123@123.123", password: "123123123")}
+  let(:user) { FactoryGirl.create :user }
   let!(:project) { user.projects.create!(title: 'new_project') }
   let!(:task1) { project.tasks.create!(title: 'new_task1', priority: 0) }
   let!(:task2) { project.tasks.create!(title: 'new_task2', priority: 1) }

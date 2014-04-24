@@ -1,7 +1,7 @@
 require 'features/features_spec_helper'
 
 feature "Removing task", js: true do
-  let(:user) {User.create!(email: "123@123.123", password: "123123123")}
+  let(:user) { FactoryGirl.create :user }
 
   before do
     login_as(user)

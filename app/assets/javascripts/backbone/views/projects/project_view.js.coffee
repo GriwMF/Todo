@@ -9,7 +9,6 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
 
   events:
     "click .destroy" : "destroy"
-    "click .update" : "update"
     "submit #frmNewTask" : "create_task"
     "dblclick #edit_proiect .view"  : "edit"
     "keypress #edit_proiect .edit"  : "updateOnEnter"
@@ -35,11 +34,6 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
     e.stopPropagation()
     @model.destroy()
     this.remove()
-
-  update: (e) ->
-    e.preventDefault()
-    e.stopPropagation()
-    @edit()
 
   create_task: (e) ->
     e.preventDefault()

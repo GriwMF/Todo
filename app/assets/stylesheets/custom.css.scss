@@ -182,10 +182,9 @@ body {
 }
 
 .table-hover > tbody > tr > #task-edit {
-  visibility: hidden;
+  opacity: 0;
 }
 
 .table-hover > tbody > tr:hover > #task-edit {
-  visibility: visible;
+  opacity: 100;
 }
-

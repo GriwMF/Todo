@@ -10,7 +10,7 @@
     %span.glyphicon.glyphicon-arrow-up
   %a.down{:href => "#"}
     %span.glyphicon.glyphicon-arrow-down
-  %a.update{:href => "#"}
+  %a.update{:href => "#/projects/#{@project_id}/tasks/#{@id}/edit"}
     %span.glyphicon.glyphicon-pencil
   %a.destroy{:href => "#"}
     %span.glyphicon.glyphicon-trash

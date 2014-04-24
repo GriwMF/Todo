@@ -18,7 +18,6 @@ class Todo.Views.Projects.IndexView extends Backbone.View
       @collection.create(title: title)
       @render()
 
-
   addAll: () =>
     @collection.each(@addOne)
 
@@ -26,7 +25,7 @@ class Todo.Views.Projects.IndexView extends Backbone.View
     view = new Todo.Views.Projects.ProjectView({model : project})
     @$("#projects-table").prepend(view.render().el)
 
-  render: =>
+  render: ->
     $(@el).html(@template(projects: @collection.toJSON() ))
     @addAll()
 

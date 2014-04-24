@@ -13,7 +13,7 @@ describe ProjectsController do
   # BooksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  let(:user) { User.create!(email: "123@123.123", password: "123123123")}
+  let(:user) { FactoryGirl.create :user }
 
   before do
     sign_in user

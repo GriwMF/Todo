@@ -11,7 +11,6 @@ class Todo.Views.Tasks.TaskView extends Backbone.View
 
   events:
     "click .destroy" : "destroy"
-    "click .update" : "update"
     "click .up" : "up"
     "click .down" : "down"
     "click .completed-checkbox" : "toggle_complete"
@@ -40,9 +39,6 @@ class Todo.Views.Tasks.TaskView extends Backbone.View
     e.stopPropagation()
     @model.destroy()
     this.remove()
-
-  update: (e) ->
-    @edit(e)  
 
   toggle_complete: ->
     completed = @model.get('completed')
