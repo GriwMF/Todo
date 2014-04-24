@@ -14,8 +14,9 @@ feature "Editing task", js: true do
     within '#table-tasks' do
       find('tr').hover
       page.find(".update").click
-      fill_in "task_title", with: "task1\n"
     end
+    fill_in "title", with: "task1"
+    click_button 'Update Task'
     expect(page).to_not have_content 'new_task'
     expect(page).to have_content 'task1'
   end

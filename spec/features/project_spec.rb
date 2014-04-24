@@ -28,7 +28,8 @@ feature "Projects management", js: true do
     user.projects.create!(title: 'new_project')
     visit root_path
     page.find(".update").click
-    fill_in "project_title", with: "project1\n"
+    fill_in "title", with: "project1"
+    click_button 'Update Project'
     expect(page).to_not have_content 'new_project'
     expect(page).to have_content 'project1'
   end
