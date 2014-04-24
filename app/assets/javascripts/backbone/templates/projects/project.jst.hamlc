@@ -4,7 +4,7 @@
       .view
         = @title
         .float-right
-          %a.update{:href => "#/#{@id}/edit"}
+          %a.update{:href => "#/projects/#{@id}/edit"}
             %span.glyphicon.glyphicon-pencil
           %a.destroy{:href => "#"}
             %span.glyphicon.glyphicon-trash

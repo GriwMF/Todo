@@ -7,7 +7,7 @@ class Todo.Views.Projects.IndexView extends Backbone.View
     "submit #frmNewProj" : "create"
 
   initialize: () ->
-    @collection.bind('reset', @render)
+    @listenTo(@collection, 'reset', @render);
 
   create: (e) ->
     e.preventDefault()
