@@ -10,7 +10,7 @@ class Todo.Views.Tasks.EditView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    @model.save(null,
+    @model.save(title: @$('#title').val().trim(),
       success : (task) =>
         @model = task
         window.location.hash = "#/index"
@@ -18,7 +18,5 @@ class Todo.Views.Tasks.EditView extends Backbone.View
 
   render : ->
     $(@el).html(@template(@model.toJSON() ))
-
-    this.$("form").backboneLink(@model)
 
     return this

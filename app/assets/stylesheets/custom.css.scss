@@ -143,6 +143,9 @@ body {
 
 #table-tasks{
   border-collapse: collapse;
+  tbody {
+    cursor: row-resize;
+  }
 }
 #table-tasks td {
   border: 1px solid #3595C4;

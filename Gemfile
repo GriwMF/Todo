@@ -15,6 +15,7 @@ gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "haml"
 gem 'haml-rails', :group => :development
 

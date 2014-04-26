@@ -50,7 +50,7 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
       new_task.save()
     else
       new_task.destroy()
-    
+
   fix_order: (rm_model, collection) ->
     i.set('priority', i.get('priority') - 1) for i in collection.models when i.get('priority') > rm_model.get('priority')
 
@@ -66,4 +66,22 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
     $(@el).html(@template(@model.toJSON() ))
     @addAllTasks()
     @input = @$('#project_title');
+    @$('#table-tasks tbody').sortable(
+      update: (event, ui) =>
+        task_id = ui.item.attr('id')
+        task_id = /[^task]*$/.exec(task_id)[0]
+        tasks = @model.get('tasks')
+        task = tasks.get(task_id)
+        priority = task.get('priority')
+        current_priority = tasks.length - ui.item.index() - 1
+        if current_priority > priority
+          i.set('priority', i.get('priority')-1) for i in tasks.models when priority < i.get('priority') <= current_priority
+        else
+          i.set('priority', i.get('priority')+1) for i in tasks.models when current_priority <= i.get('priority') < priority
+        data = task.toJSON()
+        data.drag_n_drop = true
+        data.priority = current_priority
+        task.save(data)
+        task.unset('drag_n_drop')
+    )
     return this

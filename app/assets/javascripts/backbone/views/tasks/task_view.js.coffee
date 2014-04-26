@@ -7,7 +7,6 @@ class Todo.Views.Tasks.TaskView extends Backbone.View
 
   initialize: ->
     @listenTo(@model, 'change', @render);
-    @$el.attr('id', 'task' + @model.get('id'))
 
   events:
     "click .destroy" : "destroy"
@@ -73,5 +72,6 @@ class Todo.Views.Tasks.TaskView extends Backbone.View
 
   render: ->
     $(@el).html(@template(@model.toJSON()))
+    @$el.attr('id', 'task' + @model.get('id'))
     @input = @$('#task_title');
     return this
