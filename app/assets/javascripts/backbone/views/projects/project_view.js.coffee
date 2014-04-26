@@ -83,5 +83,6 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
         data.priority = current_priority
         task.save(data)
         task.unset('drag_n_drop')
+        @render()
     )
     return this
