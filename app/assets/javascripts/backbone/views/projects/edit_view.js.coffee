@@ -11,8 +11,7 @@ class Todo.Views.Projects.EditView extends Backbone.View
     e.stopPropagation()
 
     @model.save(title: @$('#title').val().trim(),
-      success : (project) =>
-        @model = project
+      success : () =>
         window.location.hash = "#/index"
     )
 
