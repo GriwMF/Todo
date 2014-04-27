@@ -68,7 +68,6 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
     @input = @$('#project_title');
     @$('#table-tasks tbody').sortable(
       containment: "parent"
-      items: "tr"
       update: (event, ui) =>
         task_id = ui.item.attr('id')
         task_id = /[^task]*$/.exec(task_id)[0]
@@ -85,5 +84,7 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
         data.priority = current_priority
         task.save(data)
         task.unset('drag_n_drop')
+        tasks.sort()
+        @render()
     )
     return this
