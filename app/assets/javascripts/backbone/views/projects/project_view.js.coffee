@@ -62,12 +62,16 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
     view = new Todo.Views.Tasks.TaskView(model: task)
     @$("tbody").prepend(view.render().el)
 
+  
   render: =>
     $(@el).html(@template(@model.toJSON() ))
     @addAllTasks()
     @input = @$('#project_title');
     @$('#table-tasks tbody').sortable(
-      containment: "parent"
+      helper: (e, ui) ->
+        ui.children().each ->
+          $(this).width($(this).width());
+        return ui
       update: (event, ui) =>
         task_id = ui.item.attr('id')
         task_id = /[^task]*$/.exec(task_id)[0]
@@ -84,7 +88,5 @@ class Todo.Views.Projects.ProjectView extends Backbone.View
         data.priority = current_priority
         task.save(data)
         task.unset('drag_n_drop')
-        tasks.sort()
-        @render()
     )
     return this
